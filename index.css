@@ -1,0 +1,426 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0.2px;
+  font-family: Montserrat, sans-serif;
+  background-color: #395dac;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+code {
+  font-family: source-code-pro, Melo, Monaco, Consolas, "Courier New", monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: Montserrat, sans-serif;
+}
+
+p {
+  font: Montserrat, sans-serif;
+  margin: 0;
+  font-weight: normal;
+}
+
+/* The above styles will be deleted with packaging */
+
+#toggleBox {
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  bottom: 45px;
+  right: 40px;
+  cursor: pointer;
+}
+
+#infinitybot-bot-icon-arrow {
+  display: none;
+  width: 0;
+  height: 0;
+  border-right: 8px solid transparent;
+  border-left: 8px solid transparent;
+  border-bottom: 8px solid #f1f1f1;
+  position: absolute;
+  right: 23px;
+  top: -6px;
+}
+
+.infinitybot-bot-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  background-color: #fff;
+  /* background-image: url(https://infinitybot.io/assets/infinitybot-bot-icon.png); */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+}
+
+#infinitybot {
+  box-sizing: border-box;
+  display: none;
+  position: absolute;
+  bottom: 100px;
+  right: 40px;
+}
+
+@media only screen and (max-width: 374.5px) {
+  #toggleBox {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    bottom: 45px;
+    right: 5px;
+    cursor: pointer;
+  }
+  #infinitybot {
+    position: absolute;
+    bottom: 100px;
+    right: 4px;
+  }
+  .infinitybot-kit-chat-container {
+    width: 310px !important;
+  }
+  .infinitybot-kit-chat-input {
+    min-width: 230px !important;
+    min-height: 28px !important;
+    max-height: 45px !important;
+  }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 600px) {
+  #toggleBox {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    bottom: 45px;
+    right: 10px;
+    cursor: pointer;
+  }
+  #infinitybot {
+    position: absolute;
+    bottom: 100px;
+    right: 12px;
+  }
+  .infinitybot-kit-chat-container {
+    width: 350px !important;
+  }
+  .infinitybot-kit-chat-input {
+    min-width: 270px !important;
+    min-height: 28px !important;
+    max-height: 45px !important;
+  }
+}
+
+.infinitybot-kit-chat-header {
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  background-color: #f1f1f1;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  color: #514f4f;
+  padding: 12.5px;
+  font-weight: bold;
+}
+
+.infinitybot-kit-chat-header-btn-cancel-icon {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  /* background-image: url(https://infinitybot.io/assets/infinitybot-bot-icon.png); */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+}
+
+.infinitybot-kit-chat-header-cancelButton {
+  position: absolute;
+  right: 0;
+  background-color: transparent;
+  border: none;
+}
+
+.infinitybot-kit-chat-container {
+  position: relative;
+  width: 400px;
+}
+
+.infinitybot-kit-chat-inner-container {
+  height: 500px;
+  background-color: #fff;
+  border-radius: 3px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+
+.infinitybot-kit-chat-message-container {
+  padding: 0 17.5px 10px 17.5px;
+  overflow: scroll;
+  height: 432px;
+}
+
+.infinitybot-kit-chat-message-container::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* .infinitybot-kit-chat-message-container::-webkit-scrollbar-track {
+} */
+
+.infinitybot-kit-chat-message-container::-webkit-scrollbar-thumb {
+  /* border-radius: 2px; */
+  background-color: darkgrey;
+}
+
+.infinitybot-kit-chat-input-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+}
+
+.infinitybot-kit-chat-input {
+  min-width: 320px;
+  max-width: 320px;
+  min-height: 19px;
+  max-height: 200px;
+  padding: 12.5px;
+  border: none;
+  font-size: 0.85rem;
+  border-top: 1px solid #d8d8d8;
+  border-bottom-left-radius: 5px;
+  resize: none;
+  overflow: hidden;
+}
+
+.infinitybot-kit-chat-input:focus-visible {
+  outline: none;
+}
+
+.infinitybot-kit-chat-input::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* .infinitybot-kit-chat-input::-webkit-scrollbar-track {
+ 
+} */
+
+.infinitybot-kit-chat-input::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+}
+
+.infinitybot-kit-chat-input-form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: "row";
+}
+
+.infinitybot-kit-chat-input::placeholder {
+  color: #585858;
+}
+
+.infinitybot-kit-chat-btnDiv-send {
+  min-height: 10%;
+  min-width: 20%;
+}
+
+.infinitybot-kit-chat-btn-send {
+  background-color: #2898ec;
+  cursor: pointer;
+  width: 80px;
+  height: 58px;
+  border: none;
+  color: #fff;
+  border-bottom-right-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.infinitybot-kit-chat-btn-send:hover {
+  background-color: #1575be;
+}
+
+.infinitybot-kit-chat-btn-send-icon {
+  fill: #fff;
+  width: 13px;
+}
+
+.infinitybot-kit-user-chat-message-container {
+  display: flex;
+  margin: 15px 0;
+  justify-content: flex-end;
+}
+
+.infinitybot-kit-user-avatar-container {
+  min-width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-left: 12.5px;
+  background-color: #3d4e8d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.infinitybot-kit-user-avatar-icon {
+  fill: #fff;
+  width: 15px;
+  height: 15px;
+}
+
+.infinitybot-kit-user-chat-message {
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  color: #585858;
+  font-weight: 400;
+  max-width: 245px;
+  position: relative;
+  word-break: break-word;
+}
+
+.infinitybot-kit-user-chat-message-arrow {
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid #f1f1f1;
+  position: absolute;
+  right: -7px;
+  top: 13px;
+}
+
+/* CHATBOT MESSAGE  */
+
+.infinitybot-kit-chat-bot-message-container {
+  display: flex;
+  margin: 15px 0;
+  justify-content: flex-start;
+}
+
+.infinitybot-kit-chat-bot-avatar-container {
+  min-width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #a8a8a8;
+  font-size: 1.2rem;
+  margin-right: 12.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.infinitybot-kit-chat-bot-avatar-icon {
+  /* fill: #494646; */
+  width: 42px;
+  height: 42px;
+}
+
+/* .infinitybot-kit-chat-bot-avatar-letter {
+  color: #1d1d1d;
+} */
+
+.infinitybot-kit-chat-bot-message {
+  background-color: #2898ec;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  color: #ffffff;
+  font-weight: 400;
+  position: relative;
+  max-width: 245px;
+  text-align: left;
+}
+
+.infinitybot-kit-chat-bot-message-arrow {
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-right: 8px solid #2898ec;
+  position: absolute;
+  left: -7px;
+  top: 13px;
+}
+
+.infinitybot-kit-chat-bot-locading-icon-container {
+  height: 17px;
+  width: 25px;
+}
+
+#chatbot-loader #chatbot-loader-dot1 {
+  animation: load 1s infinite;
+}
+
+#chatbot-loader #chatbot-loader-dot2 {
+  animation: load 1s infinite;
+}
+
+#chatbot-loader #chatbot-loader-dot3 {
+  animation: load 1s infinite;
+}
+
+@keyframes load {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Error Messages Styles  */
+
+.infinitybot-kit-error {
+  background-color: #fff;
+  border-radius: 3px;
+  padding: 15px;
+  margin-bottom: 15px;
+  font-size: 0.7rem;
+}
+
+.infinitybot-kit-error-container {
+  width: 260px;
+}
+
+.infinitybot-kit-error-header {
+  color: #1d1d1d;
+  margin-bottom: 30px;
+}
+
+.infinitybot-kit-error-docs {
+  display: block;
+  margin: 25px auto;
+  color: rgb(56, 104, 236);
+  padding: 8px;
+  border: 1px solid rgb(40, 152, 236);
+  width: 130px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
+}
